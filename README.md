@@ -26,7 +26,7 @@
   * 收益均使用開盤價計算，唯最後一天使用收盤價
   * 最後一天將強制使用收盤價出清手中持股，持有1單位則賣出(1->0)，持有-1單位則買入(-1->0)，使手中持股歸零
 
-#### 交易策略
+#### 交易邏輯
   * 判斷目前的持股狀態(stock)為 0、 1 或 -1
   
   * 預測收盤價(Close) > 預測前一天收盤價 [漲]
@@ -41,8 +41,9 @@
     * 無持股       [0]    actoin => -1  [Sell]
     * 持1單位      [1]    action =>  0  [Sell]
     * 持-1單位    [-1]    action =>  1   [Buy]
+
   示意圖
-  
+![GITHUB](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/Trading.png "Trading")
 
 ### 模型架構 LSTM
 下圖表示本專案所使用的網路架構
@@ -61,7 +62,7 @@
 下圖表示收盤價(Close)的預測價格與實際價格的曲線分布。
 ![GITHUB](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/Stock%20Close%20Result.png "Stock Close Curve")
 
-  * MSE 驗證結果
+* MSE 驗證結果
 ![GITHUB](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/MSE_Figure.png "MSE_Figure")
 
 ### 獲利驗證結果 
@@ -93,7 +94,7 @@
 
 可於直接於終端機中執行以下指令，並將參數改成欲使用的資料集，或是直接使用預設值  
 
-    python Autotrading_main.py --training "your weather data"  --testing "your weather data" --output  "your output data"
+    python Autotrading_main.py --training "your training file"  --testing "your testing file" --output  "your output file"
 ### 輸出
 輸出之[**output.csv**](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/output.csv)格式如下表所示。
 
