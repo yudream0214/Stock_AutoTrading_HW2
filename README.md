@@ -41,10 +41,13 @@
     * 無持股       [0]    actoin => -1  [Sell]
     * 持1單位      [1]    action =>  0  [Sell]
     * 持-1單位    [-1]    action =>  1   [Buy]
+  示意圖
+  
 
 ### 模型架構 LSTM
 下圖表示本專案所使用的網路架構
 ![GITHUB](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/LSTM.png "LSTM")
+
 參數設定為 
   * units = 16
   * batch_input_shape = (BATCH_SIZE, TIME_STEPS, INPUT_SIZE)  
@@ -57,6 +60,7 @@
 ### 股價預測結果
 下圖表示收盤價(Close)的預測價格與實際價格的曲線分布。
 ![GITHUB](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/Stock%20Close%20Result.png "Stock Close Curve")
+
   * MSE 驗證結果
 ![GITHUB](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/MSE_Figure.png "MSE_Figure")
 
@@ -82,14 +86,14 @@
 
 |Name|Input|Default
 |:---:|---|---
-|--training|training|training.csv
-|--testing|testing|testing.csv
-|--outpit|output|output.csv
+|--training|training file|training.csv
+|--testing|testing file |testing.csv
+|--outpit|output file|output.csv
 
 
-可於直接於終端機中執行以下指令，並將參數改成你的參數，或是直接使用我們的預設值而不輸入參數。  
+可於直接於終端機中執行以下指令，並將參數改成欲使用的資料集，或是直接使用預設值  
 
-    python data_processing.py --data1 "your power data" --data2 "your operating reserve data" --data3 "your weather data" --data4 "your holiday data" --output "your output data"
+    python Autotrading_main.py --training "your weather data"  --testing "your weather data" --output  "your output data"
 ### 輸出
 輸出之[**output.csv**](https://github.com/yudream0214/Stock_AutoTrading_HW2/blob/main/output.csv)格式如下表所示。
 

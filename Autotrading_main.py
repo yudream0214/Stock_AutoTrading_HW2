@@ -163,7 +163,6 @@ if __name__ == '__main__':
     X_train, y_train = load_data.build_train_data(training_shift)
     X_test, y_test = load_data.build_test_data(training_shift)
 
-    """
     # Predict result
     predicted_stock_price = LSTM_model(X_train,y_train).predict(X_test, batch_size = 1)
     predicted_stock_price = load_data.data_scaler(sc, predicted_stock_price, inverse = True)
@@ -209,4 +208,3 @@ if __name__ == '__main__':
     with open(args.output, 'w') as output_file:
         for i in range(len(action)):
             output_file.writelines(str(action[i])+"\n")
-    """
